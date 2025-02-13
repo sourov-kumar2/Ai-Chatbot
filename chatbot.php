@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Content-Type: application/json");
 
-    $api_key = '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';
+    $api_key = 'sk-or-v1-f023bd0f4b00fa1ed34c78b8bcb5709dcecfdb12764e5433*********';
     $url = "https://openrouter.ai/api/v1/chat/completions";
 
     $data = json_decode(file_get_contents("php://input"), true);
