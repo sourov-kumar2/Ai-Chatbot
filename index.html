@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI Assistant</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Prism.js Syntax Highlighting -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Prism Core -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+        <!-- Language Components -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-clike.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-csharp.min.js"></script>
+
+      
+        <!-- Plugins -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/toolbar/prism-toolbar.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="mb-4">
+            <button class="send-button w-100" onclick="newChat()">+ New Chat</button>
+        </div>
+        <div class="model-selector active" data-model="qwen/qwen-vl-plus:free" onclick="selectModel(this)">
+            <strong>Qwen</strong>
+            <div class="text-muted" style="font-size: 0.9em">General purpose AI</div>
+        </div>
+        <div class="model-selector" data-model="deepseek/deepseek-r1-distill-llama-70b:free" onclick="selectModel(this)">
+            <strong>Deepseek R1</strong>
+            <div class="text-muted" style="font-size: 0.9em">Technical specialist</div>
+        </div>
+        <div class="model-selector" data-model="google/gemini-2.0-pro-exp-02-05:free" onclick="selectModel(this)">
+            <strong>Gemini Pro</strong>
+            <div class="text-muted" style="font-size: 0.9em">Creative assistant</div>
+        </div>
+        <div class="model-selector" data-model="sophosympatheia/rogue-rose-103b-v0.2:free" onclick="selectModel(this)">
+            <strong>Rogue Rose</strong>
+            <div class="text-muted" style="font-size: 0.9em">Advanced AI model</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="chat-container" id="chat"></div>
+        <div class="input-container">
+            <div class="d-flex gap-2">
+                <input type="text" id="userInput" class="form-control" 
+                       placeholder="Message AI..." 
+                       style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px">
+                <button class="send-button" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="text-muted mt-2" style="font-size: 0.9em">
+                AI can make mistakes. Verify important information.
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
